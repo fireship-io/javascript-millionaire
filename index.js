@@ -3,8 +3,8 @@ const inquirer = require("inquirer");
 const gradient = require("gradient-string");
 const chalkAnimation = require("chalk-animation");
 const figlet = require("figlet");
-
 // const { createSpinner } = require("nanospinner");
+
 // const spinner = createSpinner("Checking answer...");
 
 let playerName;
@@ -42,7 +42,7 @@ const wrongAnswer = () => {
   process.exit(1);
 };
 
-const showResult = () => {
+const showWinner = () => {
   console.clear();
   figlet(`Congrats , ${playerName} !\n $ 1 , 0 0 0 , 0 0 0`, (err, data) => {
     if (err) {
@@ -160,7 +160,7 @@ const question5 = async () => {
     })
     .then((answers) => {
       if (answers.question_5 === "non-blocking") {
-        showResult();
+        showWinner();
       } else {
         wrongAnswer();
       }
@@ -169,9 +169,9 @@ const question5 = async () => {
 
 const playGame = async () => {
   console.clear();
-  await showTitle();
 
-  askName()
+  await showTitle()
+    .then(() => askName())
     .then(() => question1())
     .then(() => question2())
     .then(() => question3())
