@@ -4,8 +4,13 @@ A super fancy CLI tool.
 
 Watch the full [Node.js CLI Tutorial]() video on YouTube. 
 
+## Take the Quiz
 
-### Packages Used
+```
+npx firequiz
+```
+
+## Packages Used
 
 [chalk](https://github.com/chalk/chalk) | 
 [inquirer](https://github.com/SBoudrias/Inquirer.js) |

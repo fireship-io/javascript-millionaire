@@ -1,11 +1,17 @@
 {
   "name": "firequiz",
-  "version": "0.0.1",
-  "description": "Who wants to be a JavaScript millionaire ",
+  "version": "0.0.3",
+  "description": "Who wants to be a JavaScript millionaire?",
+  "homepage": "https://fireship.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fireship-io/javascript-millionaire"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node ."
   },
+  "bin": "./index.js",
   "dependencies": {
     "chalk": "^4.1.2",
     "chalk-animation": "^1.6.0",
