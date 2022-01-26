@@ -4,10 +4,10 @@
   "description": "Who wants to be a JavaScript millionaire ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "dependencies": {
-    "chalk": "^5.0.0",
+    "chalk": "^4.1.2",
     "chalk-animation": "^1.6.0",
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.0",
