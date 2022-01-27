@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Who wants to be a JavaScript millionaire?",
   "homepage": "https://fireship.io",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/fireship-io/javascript-millionaire"

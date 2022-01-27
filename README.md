@@ -21,5 +21,5 @@ npx firequiz
 
 
 ```sh
-npm i chalk chalk-animation figlet gradient-string inquirer nanospinner
+npm i chalk@4 chalk-animation figlet gradient-string inquirer nanospinner
 ```

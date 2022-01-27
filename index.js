@@ -13,13 +13,12 @@
 // */
 
 
-
-const chalk = require('chalk');
-const inquirer = require('inquirer');
-const gradient = require('gradient-string');
-const chalkAnimation = require('chalk-animation');
-const figlet = require('figlet');
-const { createSpinner } = require('nanospinner');
+import chalk from 'chalk';
+import inquirer from 'inquirer';
+import gradient from 'gradient-string';
+import chalkAnimation from 'chalk-animation';
+import figlet from 'figlet';
+import { createSpinner } from 'nanospinner';
 
 let playerName;
 
@@ -77,7 +76,7 @@ function winner() {
         `Programming isn't about what you know; it's about making the command line look cool`
       )
     );
-    process.exit(1);
+    process.exit(0);
   });
 }
 
@@ -147,16 +146,13 @@ async function question5() {
   return handleAnswer(answers.question_5 === 'non-blocking');
 }
 
-async function letsPlayWhoWantsToBeAJavaScriptMillionaire() {
-  console.clear();
-  await welcome();
-  await askName();
-  await question1();
-  await question2();
-  await question3();
-  await question4();
-  await question5();
-  winner();
-}
-
-letsPlayWhoWantsToBeAJavaScriptMillionaire();
+// Run it with top-level await
+console.clear();
+await welcome();
+await askName();
+await question1();
+await question2();
+await question3();
+await question4();
+await question5();
+winner();
