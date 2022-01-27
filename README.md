@@ -2,7 +2,9 @@
 
 A super fancy CLI tool. 
 
-Watch the full [Node.js CLI Tutorial]() video on YouTube. 
+Watch the full [Node.js CLI Tutorial](https://youtu.be/_oHByo8tiEY) video on YouTube. 
+
+
 
 ## Take the Quiz
 
@@ -21,5 +23,5 @@ npx firequiz
 
 
 ```sh
-npm i chalk@4 chalk-animation figlet gradient-string inquirer nanospinner
+npm i chalk chalk-animation figlet gradient-string inquirer nanospinner
 ```
