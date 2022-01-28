@@ -37,18 +37,18 @@ async function welcome() {
     I am a process on your computer.
     If you get any question wrong I will be ${chalk.bgRed("killed")}
     So get all the questions right...
-    
+
   `);
 }
 
-async function handleAnswer(isCorrect) {
+async function handleAnswer(isCorrect, successMsg) {
   const spinner = createSpinner("Checking answer...").start();
   await sleep();
 
   if (isCorrect) {
     playerScore += 1;
     spinner.success({
-      text: `Nice work ${playerName}. That's a legit answer.`,
+      text: successMsg,
     });
     console.log(chalk.yellow(`  Score : ${playerScore} / ${totalScore} 🎉\n`));
   } else {
@@ -103,8 +103,9 @@ async function question1() {
       "Dec 17, 1996",
     ],
   });
+  const successMsg = `Nice work ${playerName}. That's a legit answer.`;
 
-  return handleAnswer(answers.question_1 === "Dec 4th, 1995");
+  return handleAnswer(answers.question_1 === "Dec 4th, 1995", successMsg);
 }
 
 async function question2() {
@@ -115,7 +116,9 @@ async function question2() {
     message: 'What is x? var x = 1_1 + "1" + Number(1)\n',
     choices: ["4", '"4"', '"1111"', "69420"],
   });
-  return handleAnswer(answers.question_2 === '"1111"');
+  const successMsg = `Good going ${playerName}! Let's hop on to the next one..`;
+
+  return handleAnswer(answers.question_2 === '"1111"', successMsg);
 }
 
 async function question3() {
@@ -126,8 +129,9 @@ async function question3() {
     message: `What is the first element in the array? ['🐏', '🦙', '🐍'].length = 0\n`,
     choices: ["0", "🐏", "🐍", "undefined"],
   });
+  const successMsg = `Someone call the fire department coz ${playerName} is on firee!!`;
 
-  return handleAnswer(answers.question_3 === "undefined");
+  return handleAnswer(answers.question_3 === "undefined", successMsg);
 }
 
 async function question4() {
@@ -143,7 +147,9 @@ async function question4() {
       "object", // Correct
     ],
   });
-  return handleAnswer(answers.question_4 === "object");
+  const successMsg = `You're close ${playerName}. Just one left. 💪`;
+
+  return handleAnswer(answers.question_4 === "object", successMsg);
 }
 
 async function question5() {
@@ -157,8 +163,9 @@ async function question5() {
       "multi-paradigm, dynamic language with a ____ event loop\n",
     choices: ["multi-threaded", "non-blocking", "synchronous", "promise-based"],
   });
+  const successMsg = `${playerName} becomes the Javascript Millionaire!!`;
 
-  return handleAnswer(answers.question_5 === "non-blocking");
+  return handleAnswer(answers.question_5 === "non-blocking", successMsg);
 }
 
 // Run it with top-level await
