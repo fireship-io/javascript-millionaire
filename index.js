@@ -24,6 +24,10 @@ let playerName;
 
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
+function resetGame() {
+  playerName = undefined;
+}
+
 async function welcome() {
   const rainbowTitle = chalkAnimation.rainbow(
     'Who Wants To Be A JavaScript Millionaire? \n'
@@ -49,7 +53,20 @@ async function handleAnswer(isCorrect) {
     spinner.success({ text: `Nice work ${playerName}. That's a legit answer` });
   } else {
     spinner.error({ text: `💀💀💀 Game over, you lose ${playerName}!` });
-    process.exit(1);
+    const playAgain = await inquirer.prompt({
+      name: 'play_again',
+      type: 'confirm',
+      message: 'Do you want to play again?',
+      default: false,
+    });
+
+    if (playAgain.play_again) {
+      resetGame();
+      await startGame();
+    } else {
+      console.log('Thanks for playing! Goodbye.');
+      process.exit(0);
+    }
   }
 }
 
@@ -147,6 +164,8 @@ async function question5() {
 }
 
 // Run it with top-level await
+
+async function startGame() {
 console.clear();
 await welcome();
 await askName();
@@ -156,3 +175,7 @@ await question3();
 await question4();
 await question5();
 winner();
+
+}
+
+startGame();

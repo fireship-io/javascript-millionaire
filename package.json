@@ -15,7 +15,7 @@
   "bin": "./index.js",
   "dependencies": {
     "chalk": "^4.1.2",
-    "chalk-animation": "^1.6.0",
+    "chalk-animation": "^2.0.3",
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.0",
     "inquirer": "^8.2.0",
